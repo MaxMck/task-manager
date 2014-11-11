@@ -1,0 +1,26 @@
+<h1 class="text-center">Task List</h1>
+
+</br>
+</br>
+
+<ol>
+  <% @tasks.each do |task| %>
+
+    <h3> <li> <%= task.title %></h3>
+       <p><%= task.content %>
+       (Priority:<%= task.priority %>)</p>
+       <%= link_to "Show", task %>
+       <%= link_to "Edit", edit_task_path(task) %>
+       <%= link_to "Delete", task_path(task),
+            method: :delete, data: { confirm: 'Are you sure?' }  %>
+    </li>
+
+  <% end %>
+  </ol>
+
+</br>
+</br>
+
+<div class="text-center">
+  <%= link_to 'Create a task', new_task_path %>
+</div>

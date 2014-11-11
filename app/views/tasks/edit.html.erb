@@ -1,0 +1,21 @@
+<h1 class='text-center'>Edit the task <%= @task.title %></h1>
+
+<%= form_for(@task) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, placeholder: 'type the title...' %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content, placeholder: 'type the content...' %>
+
+  <%= f.label :priority %>
+  <%= f.text_field :priority, placeholder: 'type the priority...' %>
+
+  <%= f.submit %>
+<% end %>
+
+
+</br>
+</br>
+</br>
+</br>
+<p class="text-center"> <%= link_to "Index Page", tasks_path %></p>
